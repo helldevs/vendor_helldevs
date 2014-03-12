@@ -41,7 +41,12 @@ then
     echo "Invalid path to apkcerts.txt, set APKCERTS to the correct path."
 fi
 
-if [ "$(which pngcrush)" != "" ];
+if [ "$(which pngquant)" != "" ];
+then
+    optimize_png () {
+        pngquant --speed 1 --force --ext .png $1 1> /dev/null 2> /dev/null
+    }
+elif [ "$(which pngcrush)" != "" ];
 then
     optimize_png () {
         pngcrush -q ${BRUTECRUSH} $1 ${1}.out 1> /dev/null 2> /dev/null
@@ -63,7 +68,7 @@ then
         pngout $1
     }
 else
-    echo "Please install pngcrush, optipng, or pngout"
+    echo "Please install pngquant, pngcrush, optipng, or pngout"
     exit 1;
 fi
 
