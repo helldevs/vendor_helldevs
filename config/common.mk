@@ -85,7 +85,8 @@ PRODUCT_PACKAGES += \
 # Extra Optional packages
 PRODUCT_PACKAGES += \
     SlimCenter \
-    SlimFileManager \
+    CMFileManager \
+    Trebuchet \
     LatinIME \
     BluetoothExt \
     DashClock
