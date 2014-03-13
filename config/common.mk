@@ -94,7 +94,6 @@ PRODUCT_PACKAGES += \
     SlimCenter \
     CMFileManager \
     Apollo \
-    Trebuchet \
     LatinIME \
     BluetoothExt \
     DashClock
