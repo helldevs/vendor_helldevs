@@ -219,7 +219,7 @@ echo ${CL_RED}"                                     "${CL_RST}
 echo ${CL_RED}"                                     "${CL_RST}
 echo ${CL_RED}"                                     "${CL_RST}
 echo ${CL_RED}"Package Complete: $OUTFILE"${CL_RST}
-cat $img.md5sum
+echo ${CL_RED}"md5: $(cat $img.md5sum | awk '{ print $1 }')"${CL_RST}
 echo
 )
 
