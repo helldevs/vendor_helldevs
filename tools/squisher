@@ -3,6 +3,7 @@
 # Squish a CM otapackage for distribution
 # cyanogen
 #
+. $ANDROID_BUILD_TOP/vendor/slim/tools/functions
 
 OUT_TARGET_HOST=`uname -a | grep Darwin`
 if [ -z "$OUT_TARGET_HOST" ]
@@ -19,8 +20,8 @@ else
 fi
 
 if [ -z "$OUT" -o ! -d "$OUT" ]; then
-    echo "ERROR: $0 only works with a full build environment. $OUT should exist."
-    exit 1
+	echo $CL_RED"ERROR: $0 only works with a full build environment. $OUT should exist."$CL_RST
+	exit 1
 fi
 
 if [ "$TARGET_BUILD_TYPE" = "debug" ]; then
@@ -205,7 +206,19 @@ img=`basename $OUTFILE`
 cd `dirname $OUTFILE`
 $MD5 $img >$img.md5sum
 echo
-echo "Package complete: $OUTFILE"
+echo -e ${CL_RED}"                                     "${CL_RST}
+echo -e ${CL_RED}"    )                   )            "${CL_RST}
+echo -e ${CL_RED}" ( /(   )   (   (    ( /(          ) "${CL_RST}
+echo -e ${CL_RED}" )\())  )(  )\  )\   )\())   )  ( /( "${CL_RST}
+echo -e ${CL_RED}"((_)\   /)\((_)((_) ((_)\ ( /(  )\())"${CL_RST}
+echo -e ${CL_RED}" _((_) /((_)_) )_/ )_(((_))(_))(_))/ "${CL_RST}
+echo -e ${CL_RED}"| || |(_)) | | | | | |/ /((_)_ | |_  "${CL_RST}
+echo -e ${CL_RED}"| __ |/ -_)| | | | | ' < / _' ||  _| "${CL_RST}
+echo -e ${CL_RED}"|_||_|\___||_| |_| |_|\_\\__,_| \__| "${CL_RST}
+echo -e ${CL_RED}"                                     "${CL_RST}
+echo -e ${CL_RED}"                                     "${CL_RST}
+echo -e ${CL_RED}"                                     "${CL_RST}
+echo -e ${CL_RED}"Package Complete: $OUTFILE"${CL_RST}
 cat $img.md5sum
 echo
 )
