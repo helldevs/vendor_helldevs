@@ -8,7 +8,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.com.android.wifi-watchlist=GoogleGuest \
     ro.setupwizard.enterprise_mode=1 \
     ro.com.android.dateformat=MM-dd-yyyy \
-    ro.com.android.dataroaming=false
+    ro.com.android.dataroaming=false \
+    ro.goo.developerid=helldevs \
+    ro.goo.rom=HellKat \
+    ro.goo.version=$(shell date -u +%Y%m%d)
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.build.selinux=1
@@ -24,6 +27,10 @@ PRODUCT_COPY_FILES += \
     vendor/slim/prebuilt/common/bin/50-slim.sh:system/addon.d/50-slim.sh \
     vendor/slim/prebuilt/common/bin/99-backup.sh:system/addon.d/99-backup.sh \
     vendor/slim/prebuilt/common/etc/backup.conf:system/etc/backup.conf
+
+# Goo Manager
+PRODUCT_COPY_FILES += \
+    vendor/slim/prebuilt/GooManager.apk:system/app/GooManager.apk
 
 # SLIM-specific init file
 PRODUCT_COPY_FILES += \
