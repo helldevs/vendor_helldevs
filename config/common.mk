@@ -93,6 +93,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     SlimCenter \
     CMFileManager \
+    KernelTweaker \
     Apollo \
     LatinIME \
     BluetoothExt \
