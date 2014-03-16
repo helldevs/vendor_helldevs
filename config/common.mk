@@ -93,9 +93,11 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     SlimCenter \
     CMFileManager \
+	HKWallpapers \
     KernelTweaker \
     Apollo \
     LatinIME \
+	LockClock \
     BluetoothExt \
     DashClock
 
